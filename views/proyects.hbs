@@ -1,0 +1,113 @@
+<h1>Your proyects</h1>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Nuevo proyecto
+</button>
+
+
+<div class="row">
+  <div class="card-group">
+    {{#each proyects}}
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
+            <p class="card-text">{{this.description}}</p>
+            <a href="/proyects/{{this._id}}" class="card-link">Editar</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo proyecto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form action="/proyects" method="POST" {{!-- enctype="multipart/form-data" --}}> 
+          <div class="form-group">
+            <label for="formGroupExampleInput">Título del proyecto</label>
+            <input name="title" type="text" class="form-control" id="formGroupExampleInput" value="{{proyect.title}}" required>
+          </div>
+          <div class="form-group">
+              <label for="description">Descripción del proyecto</label>
+              <textarea name= "description" class="form-control" id="description" rows="5" placeholder="Describe que necesitas que haga tu salvavidas" required></textarea>
+          </div>
+          <br>
+          {{!-- ZONAS --}}
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">¿En donde se entregará el proyecto?</label>
+            <select name="zone" class="form-control" id="exampleFormControlSelect1">
+              <option value="tlalpan">Tlalpan</option>
+              <option value="carranza">Venustiano Carranza</option>
+              <option value="azcapotzalco">Azcapotzalco</option>
+              <option value="iztapalapa">Iztapalapa</option>
+              <option value="iztacalco">Iztacalco</option>
+              <option value="mhidalgo">Miguel Hidalgo</option>
+              <option value="mcontreras">Magdalena Contreras</option>
+              <option value="coyoacan">Coyoacán</option>
+              <option value="malta">Milpa Alta</option>
+              <option value="tlahuac">Tláhuac</option>
+              <option value="bjuarez">Benito Juárez</option>
+              <option value="cmorelos">Cuajimalpa de Morelos</option>
+              <option value="gmadero">Gustavo A. Madero</option>
+              <option value="cuauhtemoc">Cuauhtémoc</option>
+              <option value="aobregon">Álvaro Obregón</option>
+              <option value="xochimilco">Xochimilco</option>
+            </select>
+          </div>
+          {{!-- CATEGORIAS --}}
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">¿En qué ctaegoría entra tu proyecto?</label>
+            <select name="category" class="form-control" id="exampleFormControlSelect1">
+              <option value="pintura">Pintura</option>
+              <option value="plomeria">Plomería</option>
+              <option value="electricista">Electricista</option>
+              <option value="fumigacion">Fumigación</option>
+              <option value="albanileria">Albañilería</option>
+              <option value="impermea">Impermeabilización</option>
+              <option value="carpinteria">Carpintería</option>
+              <option value="jardineria">Jardinería</option>
+              <option value="herreria">Herrería</option>
+              <option value="ldomestica">Limpieza doméstica</option>
+              <option value="lavanderia">Lavandería</option>
+              <option value="lblanca">Reparación de línea blanca</option>
+              <option value="relectro">Reparación de electrodomésticos</option>
+              <option value="scocina">Servicio de cocina</option>
+            </select>
+          </div>
+          <br><br>
+          {{!-- <div class="form-group">
+            <label for="formGroupExampleInput">Foto de perfil</label>
+            <div class="custom-file">
+              <input name="photoURL" type="file" class="custom-file-input" id="validatedCustomFile">
+              <label class="custom-file-label" for="validatedCustomFile">
+                <span>Seleccionar imagen...</span>
+              </label>
+            </div> --}}
+            <br><br>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.querySelector('input[name="photoURL"]').addEventListener('change', (e) => {
+    document.querySelector('label.custom-file-label span').innerText = e.target.files[0].name
+  })
+</script>

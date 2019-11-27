@@ -54,7 +54,7 @@ exports.signupPost = async (req, res, next) => {
     req.logIn(user, err => {
       if (err) return next(err);
       req.user = user;
-      return res.redirect('/profile');
+      return res.redirect('/proyects');
     });
   })(req, res, next);
 };
@@ -87,7 +87,7 @@ exports.loginPost = (req, res, next) =>{
       if(user.role === 'Salvavidas') {
         return res.redirect("salvavidas/profile");
       } else {
-        return res.redirect("/profile");
+        return res.redirect("/proyects");
       }
     });
   })(req, res, next);
@@ -129,117 +129,25 @@ exports.clientProfilePost = async (req, res, next) => {
 exports.profilePost = async (req, res, next) => {
   let userUpdated;
   const { _id } = req.user;
-  const { username,
-          Tlalpan,
-          Carranza,
-          Azcapotzalco,
-          Iztapalapa,
-          Iztacalco,
-          Miguel,
-          Magdalena,
-          Coyoacan,
-          Milpa,
-          Tlahuac,
-          Benito,
-          Cuajimalpa,
-          Gustavo,
-          Cuauhtemoc,
-          Obregon,
-          Xochimilco,
-          Pintura,
-          Plomeria,
-          Electricista,
-          Fumigacion,
-          Albanileria,
-          Impermeabilizacion,
-          Carpinteria,
-          Jardineria,
-          Herreria,
-          Limpieza,
-          Lavanderia,
-          Reparacion,
-          Cocina
-        } = req.body;
+  const { username, description } = req.body;
 
   if (req.file) {
     userUpdated = await User.findByIdAndUpdate(_id, {
-      $set: { username, 
-              photoURL: req.file.secure_url,
-              locations: {
-                Tlalpan,
-                Carranza,
-                Azcapotzalco,
-                Iztapalapa,
-                Iztacalco,
-                Miguel,
-                Magdalena,
-                Coyoacan,
-                Milpa,
-                Tlahuac,
-                Benito,
-                Cuajimalpa,
-                Gustavo,
-                Cuauhtemoc,
-                Obregon,
-                Xochimilco,
-              },
-              categories: { 
-                Pintura,
-                Plomeria,
-                Electricista,
-                Fumigacion,
-                Albanileria,
-                Impermeabilizacion,
-                Carpinteria,
-                Jardineria,
-                Herreria,
-                Limpieza,
-                Lavanderia,
-                Reparacion,
-                Cocina 
-              }
-             }
+      $set: { username, photoURL: req.file.secure_url, description }
     });
   } else {
     userUpdated = await User.findByIdAndUpdate(_id, {
-      $set: { 
-        username,
-        locations: {
-          Tlalpan,
-          Carranza,
-          Azcapotzalco,
-          Iztapalapa,
-          Iztacalco,
-          Miguel,
-          Magdalena,
-          Coyoacan,
-          Milpa,
-          Tlahuac,
-          Benito,
-          Cuajimalpa,
-          Gustavo,
-          Cuauhtemoc,
-          Obregon,
-          Xochimilco,
-        },
-        categories: { 
-          Pintura,
-          Plomeria,
-          Electricista,
-          Fumigacion,
-          Albanileria,
-          Impermeabilizacion,
-          Carpinteria,
-          Jardineria,
-          Herreria,
-          Limpieza,
-          Lavanderia,
-          Reparacion,
-          Cocina 
-        }
-      }
+      $set: { username, description }
     });
   }
+  
   req.user = userUpdated;
   res.redirect(`/${userUpdated.role.toLowerCase()}/profile`);
+};
+
+
+//LOGOUT
+exports.logOut = (req, res, next) => {
+  req.logout();
+  res.redirect("/");
 };

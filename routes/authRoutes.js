@@ -7,6 +7,7 @@ const {
   signupPost,
   loginGet,
   loginPost,
+  logOut
 } = require("../controllers/auth.controller");
 const { canLogin } = require("../middlewares");
 
@@ -18,6 +19,9 @@ router.post("/signup", signupPost);
 
 //LOGIN
 router.get("/login", loginGet);
-router.post("/login", loginPost)
+router.post("/login", loginPost);
+
+//LOGOUT
+router.get("/logout", logOut);
 
 module.exports = router;

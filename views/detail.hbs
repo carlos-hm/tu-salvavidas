@@ -1,0 +1,69 @@
+<h2>Detail</h2>
+
+<form action="/proyects/{{proyect._id}}" method="POST" {{!-- enctype="multipart/form-data" --}}> 
+  <div class="form-group">
+    <label for="formGroupExampleInput">Título del proyecto</label>
+    <input name="title" type="text" class="form-control" id="formGroupExampleInput" value="{{proyect.title}}" required>
+  </div>
+  <div class="form-group">
+      <label for="description">Descripción del proyecto</label>
+      <textarea name= "description" class="form-control" id="description" rows="5" placeholder="{{proyect.description}}"></textarea>
+  </div>
+  <br>
+  {{!-- ZONAS --}}
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">¿En donde se entregará el proyecto?</label>
+    <select name="zone" class="form-control" id="exampleFormControlSelect1">
+      <option value="tlalpan">Tlalpan</option>
+      <option value="azcapotzalco">Azcapotzalco</option>
+      <option value="carranza">Venustiano Carranza</option>
+      <option value="iztapalapa">Iztapalapa</option>
+      <option value="iztacalco">Iztacalco</option>
+      <option value="mhidalgo">Miguel Hidalgo</option>
+      <option value="mcontreras">Magdalena Contreras</option>
+      <option value="coyoacan">Coyoacán</option>
+      <option value="malta">Milpa Alta</option>
+      <option value="tlahuac">Tláhuac</option>
+      <option value="bjuarez">Benito Juárez</option>
+      <option value="cmorelos">Cuajimalpa de Morelos</option>
+      <option value="gmadero">Gustavo A. Madero</option>
+      <option value="cuauhtemoc">Cuauhtémoc</option>
+      <option value="aobregon">Álvaro Obregón</option>
+      <option value="xochimilco">Xochimilco</option>
+    </select>
+  </div>
+  {{!-- CATEGORIAS --}}
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">¿En qué ctaegoría entra tu proyecto?</label>
+    <select name="category" class="form-control" id="exampleFormControlSelect1">
+      <option value="pintura">Pintura</option>
+      <option value="plomeria">Plomería</option>
+      <option value="electricista">Electricista</option>
+      <option value="fumigacion">Fumigación</option>
+      <option value="albanileria">Albañilería</option>
+      <option value="impermea">Impermeabilización</option>
+      <option value="carpinteria">Carpintería</option>
+      <option value="jardineria">Jardinería</option>
+      <option value="herreria">Herrería</option>
+      <option value="ldomestica">Limpieza doméstica</option>
+      <option value="lavanderia">Lavandería</option>
+      <option value="lblanca">Reparación de línea blanca</option>
+      <option value="relectro">Reparación de electrodomésticos</option>
+      <option value="scocina">Servicio de cocina</option>
+    </select>
+  </div>
+  <br><br>
+  {{!-- <div class="form-group">
+    <label for="formGroupExampleInput">Foto de perfil</label>
+    <div class="custom-file">
+      <input name="photoURL" type="file" class="custom-file-input" id="validatedCustomFile">
+      <label class="custom-file-label" for="validatedCustomFile">
+        <span>Seleccionar imagen...</span>
+      </label>
+    </div> --}}
+    <br><br>
+    <div class="modal-footer">
+      <a href="/proyects/{{proyect._id}}/delete" class="btn btn-danger " role="button" aria-pressed="true">Eliminar</a>
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+</form>
