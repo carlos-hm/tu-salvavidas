@@ -6,7 +6,7 @@ const {
   clienteSignupGet,
   signupPost,
   loginGet,
-  loginPost
+  loginPost,
 } = require("../controllers/auth.controller");
 const { canLogin } = require("../middlewares");
 

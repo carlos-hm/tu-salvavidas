@@ -106,6 +106,26 @@ exports.profileGet = async (req, res) => {
   }
 };
 
+//CLIENTE
+exports.clientProfilePost = async (req, res, next) => {
+  let userUpdated;
+  const { _id } = req.user;
+  const { username } = req.body;
+
+  if (req.file) {
+    userUpdated = await User.findByIdAndUpdate(_id, {
+      $set: { username, photoURL: req.file.secure_url }
+    });
+  } else {
+     userUpdated = await User.findByIdAndUpdate(_id, {
+      $set: { username }
+    });
+  }
+  req.user = userUpdated;
+  res.redirect(`/profile`);
+};
+
+//SALVAVIDAS
 exports.profilePost = async (req, res, next) => {
   let userUpdated;
   const { _id } = req.user;

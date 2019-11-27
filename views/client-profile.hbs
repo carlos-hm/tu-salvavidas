@@ -1,1 +1,52 @@
 <h2>Cliente Profile</h2>
+
+<img src="{{user.photoURL}}" alt="Profile picture">
+{{user.username}}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Editar perfil
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edita tu perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="formGroupExampleInput">Nombre completo</label>
+            <input name="username" type="text" class="form-control" id="formGroupExampleInput" value="{{user.username}}"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Foto de perfil</label>
+            <div class="custom-file">
+              <input name="photoURL" type="file" class="custom-file-input" id="validatedCustomFile">
+              <label class="custom-file-label" for="validatedCustomFile">
+                <span>Seleccionar imagen...</span>
+              </label>
+            </div>
+            <br><br>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.querySelector('input[name="photoURL"]').addEventListener('change', (e) => {
+    document.querySelector('label.custom-file-label span').innerText = e.target.files[0].name
+  })
+</script>

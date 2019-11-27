@@ -74,7 +74,7 @@ const salvavidasRoutes = require("./routes/salvavidasRoutes");
 const clientRoutes = require("./routes/clienteRoutes");
 app.use('/', index);
 app.use('/', authRoutes);
-app.use("/", clientRoutes);
+app.use('/', clientRoutes);
 app.use('/salvavidas', isAuth, salvavidasRoutes);
 
 module.exports = app;
