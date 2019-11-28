@@ -24,7 +24,7 @@ router.post("/profile", upload.single("photoURL"), profilePost);
 router.get("/projects", projectsGet);
 
 //MESSAGES
-router.post("/:id/message", messagePost);
+router.post("/:id", messagePost);
 
 //Categories
 router.get("/:category", getCategory);

@@ -1,6 +1,13 @@
 <h1>Salvavidas messages</h1>
 
 {{#each messages}}
-<h5>{{this.description}}</h5>
-<h6>{{this.workerPhone}}</h6>
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{this.workerName}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">en: {{this.projectTitle}}</h6>
+    <p class="card-text">{{this.description}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">cel. {{this.workerPhone}}</h6>
+    <a href="/user/messages/{{this._id}}" class="card-link">Eliminar</a>
+  </div>
+</div>
 {{/each}}

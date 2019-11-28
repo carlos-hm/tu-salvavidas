@@ -30,10 +30,9 @@ exports.getDetail = async (req, res) => {
 //Message
 exports.messagePost = async (req, res) => { 
   const { id } = req.params;
-  const { _id, phone } = req.user;
+  const { _id, phone, username } = req.user;
   const { description } = req.body;
 
-  console.log(phone)
   const project = await Proyect.findById(id);
   const message = await Message.create(
     {
@@ -42,9 +41,11 @@ exports.messagePost = async (req, res) => {
       projectTitle: project.title,
       creatorID: project.creatorID,
       workerID: _id,
-      workerPhone: phone
+      workerPhone: phone,
+      workerName: username
     }
   )
   
-  res.redirect(`/salvavidas/messages`);
+  res.json();
+  //res.render(`/salvavidas/messages`);
 };

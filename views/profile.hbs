@@ -1,11 +1,19 @@
 <h2>Profile</h2>
 
-<img src="{{user.photoURL}}" alt="Profile picture">
-{{user.username}}
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Editar perfil
-</button>
+<div class="card text-center" style="width: 18rem;">
+  <img src="{{user.photoURL}}" class="card-img-top" alt="Profile picture">
+  <div class="card-body">
+    <h5 class="card-title">{{user.username}}</h5>
+    <p class="card-text">{{user.description}}</p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Editar perfil
+    </button>
+  </div>
+</div>
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -36,7 +44,7 @@
             <br><br>
             <div class="form-group">
               <label for="description">Describe tus habilidades</label>
-              <textarea name="description" class="form-control" id="description" rows="5" placeholder="{{user.description}}"></textarea>
+              <textarea name="description" class="form-control" id="description" rows="5"></textarea>
             </div>
             <br>
             <div class="modal-footer">
@@ -51,7 +59,16 @@
 
 
 <script>
+  const description = () => {
+    let text = document.getElementById("description");
+    text.innerHTML = "{{user.description}}";
+  };
+
   document.querySelector('input[name="photoURL"]').addEventListener('change', (e) => {
     document.querySelector('label.custom-file-label span').innerText = e.target.files[0].name
-  })
+  });
+
+  window.onload = () => {
+    description();
+  }
 </script>

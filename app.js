@@ -11,7 +11,8 @@ const path         = require('path');
 
 const passport = require("./config/passport");
 const session = require("express-session");
-const { whichRole, isAuth } = require("./middlewares");
+const { whichRole, isCliente, isSalvavidas, isAuth } = require("./middlewares");
+
 
 
 
@@ -74,7 +75,7 @@ const salvavidasRoutes = require("./routes/salvavidasRoutes");
 const clientRoutes = require("./routes/clienteRoutes");
 app.use('/', whichRole, index);
 app.use('/', authRoutes);
-app.use('/', isAuth, clientRoutes);
-app.use('/salvavidas', isAuth, salvavidasRoutes);
+app.use('/user', isAuth, isCliente, clientRoutes);
+app.use('/salvavidas', isAuth, isSalvavidas, salvavidasRoutes);
 
 module.exports = app;

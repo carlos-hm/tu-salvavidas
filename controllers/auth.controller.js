@@ -92,7 +92,7 @@ exports.loginPost = (req, res, next) =>{
       if(user.role === 'Salvavidas') {
         return res.redirect("salvavidas/projects");
       } else {
-        return res.redirect("/projects");
+        return res.redirect("user/projects");
       }
     });
   })(req, res, next);
@@ -127,7 +127,7 @@ exports.clientProfilePost = async (req, res, next) => {
     });
   }
   req.user = userUpdated;
-  res.redirect(`/profile`);
+  res.redirect(`/user/profile`);
 };
 
 //SALVAVIDAS

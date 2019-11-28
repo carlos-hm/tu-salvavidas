@@ -23,6 +23,9 @@ const messageSchema = new Schema (
     },
     workerPhone: {
       type: Number
+    },
+    workerName: {
+      type: String
     }
   },
   {

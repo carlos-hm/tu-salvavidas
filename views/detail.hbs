@@ -1,13 +1,13 @@
 <h2>Detail</h2>
 
-<form action="/proyects/{{proyect._id}}" method="POST" {{!-- enctype="multipart/form-data" --}}> 
+<form action="/user/proyects/{{proyect._id}}" method="POST" {{!-- enctype="multipart/form-data" --}}> 
   <div class="form-group">
     <label for="formGroupExampleInput">Título del proyecto</label>
     <input name="title" type="text" class="form-control" id="formGroupExampleInput" value="{{proyect.title}}" required>
   </div>
   <div class="form-group">
       <label for="description">Descripción del proyecto</label>
-      <textarea name= "description" class="form-control" id="description" rows="5" placeholder="{{proyect.description}}"></textarea>
+      <textarea name= "description" class="form-control" id="description" rows="5"></textarea>
   </div>
   <br>
   {{!-- ZONAS --}}
@@ -63,7 +63,47 @@
     </div> --}}
     <br><br>
     <div class="modal-footer">
-      <a href="/proyects/{{proyect._id}}/delete" class="btn btn-danger " role="button" aria-pressed="true">Eliminar</a>
+      <a href="/user/proyects/{{proyect._id}}/delete" class="btn btn-danger " role="button" aria-pressed="true">Eliminar</a>
       <button type="submit" class="btn btn-primary">Guardar Cambios</button>
     </div>
 </form>
+
+<script>
+  const description = () => {
+    let text = document.getElementById("description");
+    text.innerHTML = "{{proyect.description}}";
+  };
+
+  const getZone = () => {
+    let zona = document.getElementsByName("zone");
+    let replace = (zona[0]);
+    
+    for (let i = 0; i < zona[0].length; i++) {
+      let idx = zona[0][i].value
+
+      if (idx === "{{proyect.zone}}") {
+        replace.value = idx;
+      }
+    }
+  };
+
+  const getCategory = () => {
+    let category = document.getElementsByName("category");
+    let replace = (category[0]);
+    //console.log(replace)
+    
+    for (let i = 0; i < category[0].length; i++) {
+      let idx = category[0][i].value
+
+      if (idx === "{{proyect.category}}") {
+        replace.value = idx;
+      }
+    }
+  };
+
+  window.onload = () => {
+    description();
+    getZone();
+    getCategory();
+  }
+</script>

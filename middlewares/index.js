@@ -17,6 +17,22 @@ exports.whichRole = (req, res, next) => {
    next();
 };
 
+exports.isCliente = (req, res, next) => {
+  if(req.user.role === "Cliente") {
+    next();
+  } else {
+    res.redirect('/');
+  }
+};
+
+exports.isSalvavidas = (req, res, next) => {
+  if(req.user.role === "Salvavidas") {
+    next();
+  } else {
+    res.redirect('/');
+  }
+};
+
 exports.isAuth = (req, res, next) => 
 req.isAuthenticated() ? next() : res.redirect("/login");
 

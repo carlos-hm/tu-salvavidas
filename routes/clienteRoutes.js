@@ -11,7 +11,8 @@ const {
   detailGet,
   detailUpdate,
   deleteProject,
-  messageGet
+  messageGet,
+  messageDelete
 } = require("../controllers/client.controller");
 
 const upload = require("../config/cloudinary");
@@ -28,6 +29,7 @@ router.post("/proyects/:id", detailUpdate);
 router.get("/proyects/:id/delete", deleteProject);
 
 router.get("/messages", messageGet);
+router.get("/messages/:id", messageDelete);
 
 
 module.exports = router;
