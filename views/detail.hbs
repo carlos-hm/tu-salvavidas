@@ -1,5 +1,5 @@
-<h2>Detail</h2>
-
+<div class="col-md-12 order-md-1">
+  <h2>Detail</h2>
 <form action="/proyects/{{proyect._id}}" method="POST" {{!-- enctype="multipart/form-data" --}}> 
   <div class="form-group">
     <label for="formGroupExampleInput">Título del proyecto</label>
@@ -9,6 +9,7 @@
       <label for="description">Descripción del proyecto</label>
       <textarea name= "description" class="form-control" id="description" rows="5" placeholder="{{proyect.description}}"></textarea>
   </div>
+ 
   <br>
   {{!-- ZONAS --}}
   <div class="form-group">
@@ -67,3 +68,5 @@
       <button type="submit" class="btn btn-primary">Guardar Cambios</button>
     </div>
 </form>
+
+</div> 

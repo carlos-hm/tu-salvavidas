@@ -1,11 +1,21 @@
-<h2>Profile</h2>
-
-<img src="{{user.photoURL}}" alt="Profile picture">
-{{user.username}}
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Editar perfil
-</button>
+ 	<div class="containerimg">
+		<div class="d-flex justify-content-center h-100">
+			<div class="image_outer_container">
+				<div class="image_inner_container">
+					  <img src="{{user.photoURL}}" alt="Profile picture">
+				</div>
+        <div class="profile-usertitle">
+				  <div class="profile-usertitle-name">
+            <h4>{{user.username}}</h4>
+					</div>
+				  <div class="profile-usertitle-rol">Salvavidas</div>
+        </div>
+        <div class="profile-userbuttons">
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Editar perfil</button>
+				</div>
+			</div> 
+		</div>
+	</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -13,7 +23,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edita tu perfil</h5>
+        <h5 class="modal-title color-text " id="exampleModalLabel">Edita tu perfil</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -48,6 +58,7 @@
     </div>
   </div>
 </div>
+
 
 
 <script>
