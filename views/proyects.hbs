@@ -3,18 +3,22 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Nuevo proyecto
 </button>
-
-
-<div class="row">
-  <div class="card-group">
-    {{#each proyects}}
-      <div class="col-sm-4">
-        <div class="card">
-          <div class="card-body">
+<section class="sectionprojects">
+  <div class="container">
+    <div class="row mbr-justify-content-center">
+       {{#each proyects}}
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div>
+            <img src="" alt="">
+          </div>
+          <div class="text-wrap vcenter">
             <h5 class="card-title">{{this.title}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
             <p class="card-text">{{this.description}}</p>
-            <a href="/user/proyects/{{this._id}}" class="card-link">Editar</a>
+            <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/user/proyects/{{this._id}}" class="">Editar</a></button>
+                </div>
           </div>
         </div>
       </div>
@@ -34,8 +38,12 @@
       </div>
     </div>
     {{/each}}
+    </div>
   </div>
-</div>
+</section>
+
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">

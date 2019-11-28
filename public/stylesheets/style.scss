@@ -126,5 +126,128 @@ form .error {
   }
 }
 
+/// imagen profile
+.containerimg{
+  height: 100%;
+  align-content: center;
+  padding: 100px;
+}
+
+.image_outer_container{
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image_inner_container{
+  border-radius: 50%;
+  padding: 5px;
+  background: -webkit-linear-gradient(to #ff4500, #eb681c, #ebcb13ea ); 
+  background: linear-gradient(to bottom, #ff4500, #eb681c,  #ebcb13ea );
+  
+}
+.image_inner_container img{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+//fin imagen profile
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.profile-usertitle-rol {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+//modal
+.modal-header{
+  background-color:rgb(23, 162, 184);
+}
+.color-text{
+  color: white;
+}
+
+
+
+//section projects 
+.sectionprojects {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  background-color: #f1f4fa;
+}
+.wrap {
+  display: flex;
+  background: white;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.wrap:hover {
+  background: linear-gradient(135deg,#6394ff 0%,#0a193b 100%);
+  color: white;
+}
+
+.ico-wrap {
+  margin: auto;
+}
+
+.mbr-iconfont {
+  font-size: 4.5rem !important;
+  color: #313131;
+  margin: 1rem;
+  padding-right: 1rem;
+}
+.vcenter {
+  margin: auto;
+}
+
+.mbr-section-title3 {
+  text-align: left;
+}
+h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.display-5 {
+  font-family: 'Source Sans Pro',sans-serif;
+  font-size: 1.4rem;
+}
+.mbr-bold {
+  font-weight: 700;
+}
+
+p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 25px;
+}
+.display-6 {
+  font-family: 'Source Sans Pro',sans-serif;
+  font-size: 1re}
+
+
+
+
+
+
 
 
