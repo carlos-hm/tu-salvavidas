@@ -33,6 +33,8 @@ exports.messagePost = async (req, res) => {
   const { _id, phone, username } = req.user;
   const { description } = req.body;
 
+  const projects = await Proyect.find();
+
   const project = await Proyect.findById(id);
   const message = await Message.create(
     {
@@ -45,7 +47,6 @@ exports.messagePost = async (req, res) => {
       workerName: username
     }
   )
-  
-  res.json();
-  //res.render(`/salvavidas/messages`);
+
+  return res.render("salvavidas-projects", { msg: "Mensaje enviado correctamente", projects } );
 };
