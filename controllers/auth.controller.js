@@ -20,7 +20,7 @@ exports.clienteSignupGet = (req, res) => {
 };
 
 exports.signupPost = async (req, res, next) => {
-  const {username, email, password, passwordrepeat, role} = req.body;
+  const {username, email, phone, password, passwordrepeat, role} = req.body;
   if(password !== passwordrepeat) {
     if(role === 'Salvavidas'){
       return res.render("auth/signup-salvavidas", {
@@ -34,7 +34,7 @@ exports.signupPost = async (req, res, next) => {
   }
 
   const userCreated = await User.register(
-    { username, email, role }, password
+    { username, email, phone, role }, password
   ).catch(msg => { 
     const templateConfig = {
       action: "/signup",
@@ -54,7 +54,12 @@ exports.signupPost = async (req, res, next) => {
     req.logIn(user, err => {
       if (err) return next(err);
       req.user = user;
-      return res.redirect('/proyects');
+
+      if(user.role === 'Salvavidas') {
+        return res.redirect("salvavidas/projects");
+      } else {
+        return res.redirect("/projects");
+      }
     });
   })(req, res, next);
 };
@@ -79,15 +84,15 @@ exports.loginPost = (req, res, next) =>{
         register: false,
         err: "Email o contraseña incorrecta"
       };
-      return res.render("auth/login", templateConfig);
+      return res.render("/login", templateConfig);
     }
     req.logIn(user,err =>{
       if(err) return next(err);
       req.user = user;
       if(user.role === 'Salvavidas') {
-        return res.redirect("salvavidas/profile");
+        return res.redirect("salvavidas/projects");
       } else {
-        return res.redirect("/proyects");
+        return res.redirect("/projects");
       }
     });
   })(req, res, next);

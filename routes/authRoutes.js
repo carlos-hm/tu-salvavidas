@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const passport = require("passport");
 
+const { whichRole } = require ("../middlewares");
+
 const {
   salvavidasSignupGet,
   clienteSignupGet,

@@ -1,0 +1,25 @@
+<h1>Salvavidas detail</h1>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{project.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{project.zone}}</h6>
+    <p class="card-text">{{project.description}}</p>
+  </div>
+</div>
+{{author.username}}
+
+<div class="col-6">
+  <form action="/salvavidas/{{project._id}}/message" method="POST">
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enviar mensaje</label>
+        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </div>
+  </form>
+</div>
+
+
+

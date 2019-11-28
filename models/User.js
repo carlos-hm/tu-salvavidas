@@ -13,6 +13,9 @@ const userSchema = new Schema (
       trim: true,
       lowercase: true
     },
+    phone: {
+      type: Number
+    },
     role: {
       type: String,
       required: true,

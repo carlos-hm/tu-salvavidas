@@ -6,13 +6,14 @@ const {
 } = require ("../controllers/auth.controller");
 
 const {
-  whichRole,
-} = require ("../middlewares");
-
-const {
   projectsGet, 
-  getCategory 
+  getCategory,
+  getDetail,
+  messagePost
 } = require ("../controllers/salvavidas.controller");
+
+const { whichRole } = require ("../middlewares");
+
 
 const upload = require("../config/cloudinary");
 
@@ -22,8 +23,12 @@ router.post("/profile", upload.single("photoURL"), profilePost);
 //PROJECTS
 router.get("/projects", projectsGet);
 
+//MESSAGES
+router.post("/:id/message", messagePost);
+
 //Categories
 router.get("/:category", getCategory);
+router.get("/:category/:id", getDetail);
 
 
 module.exports = router;

@@ -1,8 +1,7 @@
 const passport = require("passport");
 const Proyect = require("../models/Proyect");
-
-const Category = require("../models/Category");
 const User = require("../models/User");
+const Message = require("../models/Message");
 
 
 //CREATE
@@ -25,7 +24,7 @@ exports.newProyectPost = async (req, res) => {
       creatorID: _id,
     })
 
-  res.redirect(`/proyects`);
+  res.redirect(`/projects`);
 }
 
 
@@ -36,7 +35,7 @@ exports.detailGet = async (req, res) => {
   console.log(proyect);
 
   res.render("detail", { proyect });
-}
+};
 
 exports.detailUpdate = async (req, res, next) => {
   const { id } = req.params;
@@ -49,7 +48,7 @@ exports.detailUpdate = async (req, res, next) => {
     category
   }});
 
-  res.redirect(`/proyects`);
+  res.redirect(`/projects`);
 }
 
 
@@ -62,27 +61,10 @@ exports.deleteProject = async (req, res, next) => {
 };
 
 
-exports.categoriesGet = (req, res) => {
-  res.render("categorias");
+//Message
+exports.messageGet = async (req, res) => {
+  const { _id } = req.user;
+  const messages = await Message.find( { creatorID: _id } );
+
+  res.render("messages", { messages });
 };
-
-exports.categoryGet = async (req, res) => {
-  const { id } = req.params;
-  const categoria = await Category.findById(id);
-
-  // const salvador = await User.find({ categories { Pintura: "on" } });
-
-  // console.log(salvador) 
-
-  //categoria.salvadores
-  
-  //console.log(salvadores.salvavidas);
-
-  const uno = await User.findById('5ddc47d24fd1f50d8e883eb5');
-  console.log(uno)
-
-  // await salvadores.salvavidas.forEach ( element => {
-  //  console.log(User.findById({element}));
-  // });
-  res.render("salvavidas", { categoria, uno });
-}

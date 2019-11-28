@@ -2,10 +2,10 @@ exports.whichRole = (req, res, next) => {
   if(req.isAuthenticated()) {
     if(req.user.role === "Cliente") {
       req.app.locals.isCliente = true;
-      res.redirect('/');
+      //res.redirect('/');
     } else if(req.user.role === "Salvavidas") {
       req.app.locals.isSalvavidas = true;
-      next()
+      //next()
     } else {
       req.app.locals.isCliente = false;
       req.app.locals.isSalvavidas = false;
@@ -14,7 +14,7 @@ exports.whichRole = (req, res, next) => {
     req.app.locals.isCliente = false;
     req.app.locals.isSalvavidas = false;
   }
-   //next();
+   next();
 };
 
 exports.isAuth = (req, res, next) => 

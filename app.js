@@ -72,7 +72,7 @@ const index = require('./routes/index');
 const authRoutes = require("./routes/authRoutes");
 const salvavidasRoutes = require("./routes/salvavidasRoutes");
 const clientRoutes = require("./routes/clienteRoutes");
-app.use('/', index);
+app.use('/', whichRole, index);
 app.use('/', authRoutes);
 app.use('/', isAuth, clientRoutes);
 app.use('/salvavidas', isAuth, salvavidasRoutes);
