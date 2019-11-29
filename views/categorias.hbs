@@ -1,19 +1,103 @@
-<h1>Categoría</h1>
-
-<div class="row">
-  <div class="card-group">
-    {{#each projects}}
-      <div class="col-sm-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{this.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
-            <p class="card-text">{{this.description}}</p>
-            <a href="/proyects/{{this._id}}" class="card-link">Editar</a>
-          </div>
-        </div>
-      </div>
-    {{/each}}
+<h2 id="categoria">Categoría</h2>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Categoría
+  </button>
+  <div id="selected" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/salvavidas/projects" value="todos">Todos</a>
+    <a class="dropdown-item" href="/salvavidas/pintura" value="pintura">Pintura</a>
+    <a class="dropdown-item" href="/salvavidas/plomeria" value="">Plomería</a>
+    <a class="dropdown-item" href="/salvavidas/electricista" value="">Electricista</a>
+    <a class="dropdown-item" href="/salvavidas/fumigacion" value="">Fumigación</a>
+    <a class="dropdown-item" href="/salvavidas/albanileria" value="">Albañilería</a>
+    <a class="dropdown-item" href="/salvavidas/impermea" value="">Impermeabilización</a>
+    <a class="dropdown-item" href="/salvavidas/carpinteria" value="">Carpintería</a>
+    <a class="dropdown-item" href="/salvavidas/jardineria" value="">Jardinería</a>
+    <a class="dropdown-item" href="/salvavidas/herreria" value="">Herrería</a>
+    <a class="dropdown-item" href="/salvavidas/ldomestica" value="">Limpieza doméstica</a>
+    <a class="dropdown-item" href="/salvavidas/lavanderia" value="">Lavandería</a>
+    <a class="dropdown-item" href="/salvavidas/lblanca" value="">Reparación de línea blanca</a>
+    <a class="dropdown-item" href="/salvavidas/relectro" value="">Reparación de electrodomésticos</a>
+    <a class="dropdown-item" href="/salvavidas/scocina" value="">Servicio de cocina</a>
   </div>
 </div>
 
+<div class="row mbr-justify-content-center">
+        {{#each projects}}
+          <div class="col-lg-6 mbr-col-md-10">
+            <div class="wrap">
+              <div class="text-wrap vcenter">
+                <h5 class="card-title">{{this.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
+                <p class="card-text">{{this.description}}</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{this.category}}/{{this._id}}" class="">Ver más</a></button>
+                  </div>
+               </div>
+               <div class="col-md-4 tamaño-img ">
+                <img src="{{this.photoURL}}" class="card-img" alt="Icono de la categoría">
+              </div>
+            </div>
+          </div>
+       {{/each}}
+      </div>
+
+<script>
+  const getCategory = () => {
+    let categoria = document.getElementById("categoria");
+    const category = '{{category}}';
+    let cat;
+
+    switch (category) {
+      case 'pintura':
+        cat = "Pintura";
+        break;
+      case 'plomeria':
+        cat = "Plomería";
+        break;
+      case 'electricista':
+        cat = "Electricista";
+        break;
+      case 'fumigacion':
+        cat = "Fumigación";
+        break;
+      case 'albanileria':
+        cat = "Albañilería";
+        break;
+      case 'impermea':
+        cat = "Impermeabilización";
+        break;
+      case 'carpinteria':
+        cat = "Carpintería";
+        break;
+      case 'jardineria':
+        cat = "Jardinería";
+        break;
+      case 'herreria':
+        cat = "Herrería";
+        break;
+      case 'ldomestica':
+        cat = "Limpieza doméstica";
+        break;
+      case 'lavanderia':
+        cat = "Lavandería";
+        break;
+      case 'lblanca':
+        cat = "Reparación de línea blanca";
+        break;
+      case 'relectro':
+        cat = "Reparación de electrodomésticos";
+        break;
+      case 'scocina':
+        cat = "Servicio de cocina";
+        break;
+    }
+    categoria.innerText = cat;
+    console.log(categoria)
+  };
+  
+
+   window.onload = () => {
+    getCategory();
+  }
+</script>

@@ -12,10 +12,9 @@ exports.projectsGet = async (req, res) => {
 
 exports.getCategory = async (req, res) => {
   const { category } = req.params;
-  console.log(category)
   const projects = await Proyect.find( {category: category });
 
-  res.render("categorias", { projects });
+  res.render("categorias", { projects, category });
 }
 
 exports.getDetail = async (req, res) => {
