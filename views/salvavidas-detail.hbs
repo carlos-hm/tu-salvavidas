@@ -1,23 +1,32 @@
-<h1>Salvavidas detail</h1>
+  <h2>Consigue el trabajo</h2>
+<div class="sectionprojects" id="s-detail">
+<div class="row">
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{project.title}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{project.zone}}</h6>
-    <p class="card-text">{{project.description}}</p>
+  <div class="card-group col-lg-6 mbr-col-md-10">
+    <div class="wrap">
+      <div class="text-wrap vcenter">
+        <h5 class="card-title">{{project.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{project.zone}}</h6>
+        <p class="card-text">{{project.description}}</p>
+       </div>
+       <div class="col-md-4 tamaño-img">
+        <img src="{{project.photoURL}}" class="card-img" alt="Icono de la categoría">
+      </div>
+    </div>
+  </div>
+  <div class="card-group col-sm-6 px-lg-5">
+    <div class="wrap border-success" style="width: 30rem;">
+      <div class="card-body">
+        <form action="/salvavidas/{{project._id}}" method="POST">
+        <h5 class="card-title">Ayuda a {{author.username}}</h5>
+          <div class="form-group">
+            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe como podrías ayudar en este proyecto." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success" data-target="#exampleModal">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
-{{author.username}}
-
-<div class="col-6">
-  <form action="/salvavidas/{{project._id}}" method="POST">
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Escribele un mensaje</label>
-      <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary" data-target="#exampleModal">
-      Enviar mensaje
-    </button>
-  </form>
-</div>
-
