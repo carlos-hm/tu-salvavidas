@@ -17,7 +17,7 @@ Ingresa tus datos: nombre, email y contraseña.
 Salvavidas:
 Ingresa tus datos: nombre,email, contraseña y descripción.
 
-2.-Log In 
+2.-Iniciar Sesión
 Para Salvado y Salvavidas ingresa con email y contraseña.
 
 3.-¿Ingresaste como Salvado? 
