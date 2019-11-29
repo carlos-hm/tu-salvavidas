@@ -184,8 +184,6 @@ form .error {
   color: white;
 }
 
-
-
 //section projects 
 .sectionprojects {
   padding-top: 4rem;
@@ -199,11 +197,17 @@ form .error {
   border-radius: 0.5rem;
   box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
   margin-bottom: 2rem;
+  width: 87%;
+  margin: 1%;
 }
 
 .wrap:hover {
   background: linear-gradient(135deg,#6394ff 0%,#0a193b 100%);
   color: white;
+}
+.wrap-hover-message:hover{
+  background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+     color: white;
 }
 
 .ico-wrap {
@@ -243,6 +247,11 @@ p {
 .display-6 {
   font-family: 'Source Sans Pro',sans-serif;
   font-size: 1re}
+
+.tamaño-img{
+  width: 34%;
+  margin-top: 5%;
+}
 
 
 

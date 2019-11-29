@@ -1,14 +1,16 @@
-<div class="col-md-12 order-md-1">
-  <h2>Detail</h2>
-<form action="/user/proyects/{{proyect._id}}" method="POST" {{!-- enctype="multipart/form-data" --}}> 
-  <div class="form-group">
-    <label for="formGroupExampleInput">Título del proyecto</label>
-    <input name="title" type="text" class="form-control" id="formGroupExampleInput" value="{{proyect.title}}" required>
-  </div>
-  <div class="form-group">
-      <label for="description">Descripción del proyecto</label>
-      <textarea name= "description" class="form-control" id="description" rows="5"></textarea>
-  </div>
+<section class="sectionprojects">
+  <div class="col-md-12 order-md-1">
+    <h2>Edita tu proyecto</h2>
+      <form action="/user/proyects/{{proyect._id}}" method="POST" {{!-- enctype="multipart/form-data" --}}> 
+        <div class="form-group">
+          <label for="formGroupExampleInput">Título del proyecto</label>
+          <input name="title" type="text" class="form-control" id="formGroupExampleInput" value="{{proyect.title}}" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción del proyecto</label>
+          <textarea name= "description" class="form-control" id="description" rows="5"></textarea>
+        </div>
+
  
   <br>
   {{!-- ZONAS --}}
@@ -35,7 +37,7 @@
   </div>
   {{!-- CATEGORIAS --}}
   <div class="form-group">
-    <label for="exampleFormControlSelect1">¿En qué ctaegoría entra tu proyecto?</label>
+    <label for="exampleFormControlSelect1">¿En qué categoría entra tu proyecto?</label>
     <select name="category" class="form-control" id="exampleFormControlSelect1">
       <option value="pintura">Pintura</option>
       <option value="plomeria">Plomería</option>
@@ -68,6 +70,7 @@
       <button type="submit" class="btn btn-primary">Guardar Cambios</button>
     </div>
 </form>
+</section>
 
 <script>
   const description = () => {
