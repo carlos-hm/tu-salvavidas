@@ -17,19 +17,14 @@ Ingresa tus datos: nombre, email y contraseña.
 Salvavidas:
 Ingresa tus datos: nombre,email, contraseña y descripción.
 
-2.-Iniciar Sesión
-Para Salvado y Salvavidas ingresa con email y contraseña.
+2.-Iniciar Sesión: para salvado y salvavidas ingresa con email y contraseña.
 
 3.-¿Ingresaste como Salvado? 
 Realiza los siguientes pasos:
 *Puedes utilizar el siguiente correo y contraseña si no deseas realizar un registro nuevo: 
 -Correo: hmcarlos110@hotmail.com
 -Contraseña: 123
-*Crea un nuevo proyecto
-- Ingresa título 
--Descripció
--Delegación 
--Categoría
+*Crea un nuevo proyecto: ingresa título,descripció,delegación y categoría.
 Puedes editar, eliminar o guardar algun cambio de tu proyecto
 Puedes revisar tus mensajes
 Puedes editar tu pefil 
@@ -40,8 +35,7 @@ Realiza los siguientes pasos:
 *Puedes utilizar el siguiente correo y contraseña si no deseas realizar un registro nuevo: 
 -Correo:chdezmancilla@gmail.com
 -Contraseña: 123
-Al ingresar podrás ver todos los proyectos y escoger al que quieres aplicar, solo con dar en "ver mas" podrásenviar un mensaje
-para contactar al salvador.
+Al ingresar podrás ver todos los proyectos y escoger al que quieres aplicar, solo con dar en "ver mas" podrás enviar un mensaje ingresando tu numero de teléfono para que el salvado pueda contactarte.
 Puedes editar tu perfil y cerrar sesión.
 
 ## Gracias 🎁
