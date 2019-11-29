@@ -1,44 +1,25 @@
-<h1>Your proyects</h1>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Nuevo proyecto
-</button>
 <section class="sectionprojects">
   <div class="container">
-    <div class="row mbr-justify-content-center">
-       {{#each proyects}}
-      <div class="col-lg-6 mbr-col-md-10">
-        <div class="wrap">
-          <div>
-            <img src="" alt="">
+    <h1>Tus proyectos</h1>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo proyecto</button>
+      <div class="row mbr-justify-content-center">
+        {{#each proyects}}
+          <div class="col-lg-6 mbr-col-md-10">
+            <div class="wrap">
+              <div class="text-wrap vcenter">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/user/proyects/{{this._id}}" class="">Editar</a></button>
+                  </div>
+               </div>
+               <div class="col-md-4 tamaño-img ">
+                <img src="{{this.photoURL}}" class="card-img" alt="Icono de la categoría">
+              </div>
+            </div>
           </div>
-          <div class="text-wrap vcenter">
-            <h5 class="card-title">{{this.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
-            <p class="card-text">{{this.description}}</p>
-            <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/user/proyects/{{this._id}}" class="">Editar</a></button>
-                </div>
-          </div>
-        </div>
+       {{/each}}
       </div>
-
-      <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="{{this.photoURL}}" class="card-img" alt="Icono de la categoría">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{this.title}}</h5>
-            <p class="card-text">{{this.description}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-    </div>
   </div>
 </section>
 
@@ -127,10 +108,3 @@
     </div>
   </div>
 </div>
-
-
-{{!-- <script>
-  document.querySelector('input[name="photoURL"]').addEventListener('change', (e) => {
-    document.querySelector('label.custom-file-label span').innerText = e.target.files[0].name
-  });
-</script> --}}
