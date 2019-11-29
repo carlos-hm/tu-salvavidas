@@ -125,6 +125,14 @@ form .error {
 
   }
 }
+.myform-edit{
+  background-color: white;
+  border: none;
+  .form-control{
+    background-color:rgba(250,250,250,.8);
+
+  }
+}
 
 /// imagen profile
 .containerimg{
@@ -251,6 +259,15 @@ p {
 .tamaño-img{
   width: 34%;
   margin-top: 5%;
+}
+
+
+.nav-color{
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  color: white;
+}
+.color-ul:hover{
+  color: white;
 }
 
 

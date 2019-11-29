@@ -19,7 +19,7 @@
   
 
   {{#if isCliente}}
-  <nav class="nav justify-content-end">
+ <!-- <nav class="nav justify-content-end">
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link" href="/user/projects">Poyectos</a>
@@ -34,9 +34,19 @@
         <a class="nav-link" href="/logout">Cerrar sesión</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
+   <header class="masthead mb-auto">
+    <div class="inner navbar nav-color">
+      <h3 class="text-left"><img class="masthead-brand " src="https://res.cloudinary.com/carlos-hm/image/upload/v1574988046/salvavidas/salvavidas_hjfyvu.png" alt="" width="50">Tu Salvavidas</h3>
+      <nav class="nav nav-masthead justify-content-center ">
+        <a class="nav-link active color-ul" href="/user/projects">Proyectos</a>
+        <a class="nav-link color-ul " href="/user/messages">Mensajes</a>
+        <a class="nav-link color-ul" href="/user/profile">Perfil</a>
+        <a class="nav-link color-ul" href="/logout">Cerrar sesión</a>
+      </nav>
+    </div>
   {{else if isSalvavidas}}
-  <nav class="nav justify-content-end">
+  <!--<nav class="nav justify-content-end">
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link" href="/salvavidas/projects">Poyectos</a>
@@ -48,7 +58,17 @@
         <a class="nav-link" href="/logout">Cerrar sesión</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
+  <header class="masthead mb-auto">
+    <div class="inner navbar nav-color">
+       <h3 class="text-left"><img class="masthead-brand " src="https://res.cloudinary.com/carlos-hm/image/upload/v1574988046/salvavidas/salvavidas_hjfyvu.png" alt="" width="50">Tu Salvavidas</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link active color-ul" href="/salvavidas/projects">Proyectos</a>
+        <a class="nav-link color-ul" href="/salvavidas/profile">Perfil</a>
+        <a class="nav-link color-ul" href="/logout">Cerrar sesión</a>
+      </nav>
+    </div>
+  </header>
   {{else}}
   <nav class="nav justify-content-end">
     <ul class="nav nav-pills">
@@ -61,6 +81,13 @@
     </ul>
   </nav>
   {{/if}}
+
+
+
+
+
+
+
 
   {{{body}}}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
