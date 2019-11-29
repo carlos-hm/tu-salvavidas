@@ -22,11 +22,10 @@ exports.getDetail = async (req, res) => {
   const project = await Proyect.findById(id);
   
   const author = await User.findById(project.creatorID);
-  //console.log(author);
   res.render("salvavidas-detail", { project, author });
 }
 
-//Message
+
 exports.messagePost = async (req, res) => { 
   const { id } = req.params;
   const { _id, phone, username } = req.user;

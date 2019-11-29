@@ -64,7 +64,6 @@ exports.signupPost = async (req, res, next) => {
   })(req, res, next);
 };
 
-//LOGIN
 exports.loginGet = (req, res) => {
   const templateConfig = {
     action: "/login",
@@ -98,8 +97,6 @@ exports.loginPost = (req, res, next) =>{
   })(req, res, next);
 }
 
-
-//PROFILE
 exports.profileGet = async (req, res) => {
   const { _id } = req.user;
   const user = await User.findById(_id);
@@ -111,7 +108,6 @@ exports.profileGet = async (req, res) => {
   }
 };
 
-//CLIENTE
 exports.clientProfilePost = async (req, res, next) => {
   let userUpdated;
   const { _id } = req.user;
@@ -130,7 +126,6 @@ exports.clientProfilePost = async (req, res, next) => {
   res.redirect(`/user/profile`);
 };
 
-//SALVAVIDAS
 exports.profilePost = async (req, res, next) => {
   let userUpdated;
   const { _id } = req.user;
@@ -150,8 +145,6 @@ exports.profilePost = async (req, res, next) => {
   res.redirect(`/${userUpdated.role.toLowerCase()}/profile`);
 };
 
-
-//LOGOUT
 exports.logOut = (req, res, next) => {
   req.logout();
   res.redirect("/");

@@ -1,5 +1,4 @@
 const { model, Schema } = require("mongoose");
-//const PLM = require("passport-local-mongoose");
 
 const proyectSchema = new Schema (
   {

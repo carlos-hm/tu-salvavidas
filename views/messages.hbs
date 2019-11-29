@@ -1,16 +1,17 @@
 <section class="sectionprojects">
   <div class="container">
-    <h1>Mensajes de Salvavidas</h1>
+    <h3>Mensajes recibidos</h3>
+    <br>
     <div class="row mbr-justify-content-center">
         {{#each messages}}
-          <div class="col-lg-6 mbr-col-md-10">
+          <div class="card-group col-lg-6 mbr-col-md-10">
             <div class="wrap wrap-hover-message">
               <div class="text-wrap vcenter">
                 <h5 class="card-title">{{this.workerName}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">en: {{this.projectTitle}}</h6>
+                <h6 class="card-subtitle mb-2 ">en: {{this.projectTitle}}</h6>
                 <p class="card-text">{{this.description}}</p>
-                <h6 class="card-subtitle mb-2 text-muted">cel. {{this.workerPhone}}</h6>
-                <a href="/user/messages/{{this._id}}" class="card-link">Eliminar</a>
+                <h6 class="card-subtitle mb-2 ">cel. {{this.workerPhone}}</h6>
+                <button type="button" class="btn btn-sm btn-outline-light"><a href="/user/messages/{{this._id}}" class="card-link">Eliminar</a></button>
               </div>
             </div>
           </div>

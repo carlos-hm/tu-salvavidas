@@ -1,9 +1,9 @@
-  <h2>Consigue el trabajo</h2>
 <div class="sectionprojects" id="s-detail">
+  <h3 style="margin-left: 4%; margin-bottom: 3%">Consigue el trabajo</h3>
 <div class="row">
 
   <div class="card-group col-lg-6 mbr-col-md-10">
-    <div class="wrap">
+    <div class="wraps">
       <div class="text-wrap vcenter">
         <h5 class="card-title">{{project.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{project.zone}}</h6>
@@ -15,14 +15,14 @@
     </div>
   </div>
   <div class="card-group col-sm-6 px-lg-5">
-    <div class="wrap border-success" style="width: 30rem;">
+    <div class="wrap wrap-hover-message border-success" style="width: 30rem;">
       <div class="card-body">
         <form action="/salvavidas/{{project._id}}" method="POST">
         <h5 class="card-title">Ayuda a {{author.username}}</h5>
           <div class="form-group">
             <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe como podrías ayudar en este proyecto." required></textarea>
           </div>
-          <button type="submit" class="btn btn-success" data-target="#exampleModal">
+          <button type="submit" class="btn btn-light" data-target="#exampleModal">
             Enviar mensaje
           </button>
         </form>

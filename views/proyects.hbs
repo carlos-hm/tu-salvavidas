@@ -1,16 +1,18 @@
 <section class="sectionprojects">
-  <div class="container">
-    <h1>Tus proyectos</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nuevo proyecto</button>
+  <div class="container" style="position: relative;">
+    <h3>Tus proyectos</h3>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="position: absolute; right: 7%; top: 0%;">
+          Nuevo proyecto
+        </button>
       <div class="row mbr-justify-content-center">
         {{#each proyects}}
-          <div class="col-lg-6 mbr-col-md-10">
+          <div class="card-group col-lg-6 mbr-col-md-10">
             <div class="wrap">
               <div class="text-wrap vcenter">
                 <h5 class="card-title">{{this.title}}</h5>
                 <p class="card-text">{{this.description}}</p>
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/user/proyects/{{this._id}}" class="">Editar</a></button>
+                    <button type="button" class="btn btn-sm btn-outline-light"><a href="/user/proyects/{{this._id}}" class="">Editar</a></button>
                   </div>
                </div>
                <div class="col-md-4 tamaño-img ">
@@ -22,13 +24,14 @@
       </div>
   </div>
 </section>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nuevo proyecto</h5>
+        <h5 class="modal-title color-text" id="exampleModalLabel">Nuevo proyecto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -87,14 +90,6 @@
             </select>
           </div>
           <br><br>
-          {{!-- <div class="form-group">
-            <label for="formGroupExampleInput">Foto de perfil</label>
-            <div class="custom-file">
-              <input name="photoURL" type="file" class="custom-file-input" id="validatedCustomFile">
-              <label class="custom-file-label" for="validatedCustomFile">
-                <span>Seleccionar imagen...</span>
-              </label>
-            </div> --}}
             <br><br>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
