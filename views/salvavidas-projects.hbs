@@ -1,43 +1,40 @@
-<h2>Salvavidas projects</h2>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Categoría
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/salvavidas/projects">Todos</a>
-    <a class="dropdown-item" href="/salvavidas/pintura">Pintura</a>
-    <a class="dropdown-item" href="/salvavidas/pomeria">Plomería</a>
-    <a class="dropdown-item" href="/salvavidas/electricista">Electricista</a>
-    <a class="dropdown-item" href="/salvavidas/fumigacion">Fumigación</a>
-    <a class="dropdown-item" href="/salvavidas/albanileria">Albañilería</a>
-    <a class="dropdown-item" href="/salvavidas/impermea">Impermeabilización</a>
-    <a class="dropdown-item" href="/salvavidas/carpinteria">Carpintería</a>
-    <a class="dropdown-item" href="/salvavidas/jardineria">Jardinería</a>
-    <a class="dropdown-item" href="/salvavidas/herreria">Herrería</a>
-    <a class="dropdown-item" href="/salvavidas/ldomestica">Limpieza doméstica</a>
-    <a class="dropdown-item" href="/salvavidas/lavanderia">Lavandería</a>
-    <a class="dropdown-item" href="/salvavidas/lblanca">Reparación de línea blanca</a>
-    <a class="dropdown-item" href="/salvavidas/relectro">Reparación de electrodomésticos</a>
-    <a class="dropdown-item" href="/salvavidas/scocina">Servicio de cocina</a>
-  </div>
-</div>
-
 <section class="sectionprojects">
   <div class="container">
-    <div class="row mbr-justify-content-center">
-       {{#each projects}}
-      <div class="col-lg-6 mbr-col-md-10">
-        <div class="wrap">
-          <div class="text-wrap vcenter">
-            <h5 class="card-title">{{this.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
-            <p class="card-text">{{this.description}}</p>
-            <a href="{{this.category}}/{{this._id}}" class="card-link">Ver más</a>
+    <h2>Proyectos de Salvavidas</h2>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoría</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/salvavidas/projects">Todos</a>
+            <a class="dropdown-item" href="/salvavidas/pintura">Pintura</a>
+            <a class="dropdown-item" href="/salvavidas/pomeria">Plomería</a>
+            <a class="dropdown-item" href="/salvavidas/electricista">Electricista</a>
+            <a class="dropdown-item" href="/salvavidas/fumigacion">Fumigación</a>
+            <a class="dropdown-item" href="/salvavidas/albanileria">Albañilería</a>
+            <a class="dropdown-item" href="/salvavidas/impermea">Impermeabilización</a>
+            <a class="dropdown-item" href="/salvavidas/carpinteria">Carpintería</a>
+            <a class="dropdown-item" href="/salvavidas/jardineria">Jardinería</a>
+            <a class="dropdown-item" href="/salvavidas/herreria">Herrería</a>
+            <a class="dropdown-item" href="/salvavidas/ldomestica">Limpieza doméstica</a>
+            <a class="dropdown-item" href="/salvavidas/lavanderia">Lavandería</a>
+            <a class="dropdown-item" href="/salvavidas/lblanca">Reparación de línea blanca</a>
+            <a class="dropdown-item" href="/salvavidas/relectro">Reparación de electrodomésticos</a>
+            <a class="dropdown-item" href="/salvavidas/scocina">Servicio de cocina</a>
           </div>
-        </div>
       </div>
-    {{/each}}
-    </div>
+      <div class="row mbr-justify-content-center">
+        {{#each projects}}
+          <div class="col-lg-6 mbr-col-md-10">
+            <div class="wrap">
+              <div class="text-wrap vcenter">
+                <h5 class="card-title">{{this.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
+                <p class="card-text">{{this.description}}</p>
+                <a href="{{this.category}}/{{this._id}}" class="card-link">Ver más</a>
+              </div>   
+            </div>
+          </div>
+        {{/each}}
+      </div>
   </div>
 </section>
   
